@@ -1,0 +1,60 @@
+{
+  "name": "Geography",
+  "questions": [
+    {
+      "prompt": "Which country has the most time zones?",
+      "choices": ["Russia", "USA", "France", "China"],
+      "correct": 2
+    },
+    {
+      "prompt": "What is the longest river in the world?",
+      "choices": ["Yangtze", "Amazon", "Nile", "Mississippi"],
+      "correct": 2
+    },
+    {
+      "prompt": "Which desert is the largest?",
+      "choices": ["Sahara", "Gobi", "Arabian", "Antarctic"],
+      "correct": 3
+    },
+    {
+      "prompt": "Mount Everest sits on the border between Nepal and which country?",
+      "choices": ["India", "Bhutan", "China", "Pakistan"],
+      "correct": 2
+    },
+    {
+      "prompt": "Which European capital is split by the Tagus River?",
+      "choices": ["Madrid", "Lisbon", "Porto", "Seville"],
+      "correct": 1
+    },
+    {
+      "prompt": "Which country has the longest coastline?",
+      "choices": ["Russia", "Indonesia", "Canada", "Australia"],
+      "correct": 2
+    },
+    {
+      "prompt": "Lake Titicaca lies between which two countries?",
+      "choices": [
+        "Brazil and Peru",
+        "Peru and Bolivia",
+        "Chile and Argentina",
+        "Bolivia and Chile"
+      ],
+      "correct": 1
+    },
+    {
+      "prompt": "What is the smallest country in the world by area?",
+      "choices": ["Monaco", "San Marino", "Vatican City", "Tuvalu"],
+      "correct": 2
+    },
+    {
+      "prompt": "Which city is split between Europe and Asia by the Bosphorus?",
+      "choices": ["Athens", "Istanbul", "Baku", "Tbilisi"],
+      "correct": 1
+    },
+    {
+      "prompt": "Which continent has the most countries?",
+      "choices": ["Asia", "Africa", "Europe", "South America"],
+      "correct": 1
+    }
+  ]
+}

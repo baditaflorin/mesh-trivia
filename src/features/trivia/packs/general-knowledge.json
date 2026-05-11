@@ -1,0 +1,55 @@
+{
+  "name": "General knowledge",
+  "questions": [
+    {
+      "prompt": "Which planet has the most moons confirmed as of 2025?",
+      "choices": ["Jupiter", "Saturn", "Uranus", "Neptune"],
+      "correct": 1
+    },
+    {
+      "prompt": "How many bones are in the adult human body?",
+      "choices": ["186", "206", "236", "256"],
+      "correct": 1
+    },
+    {
+      "prompt": "What is the smallest prime number greater than 50?",
+      "choices": ["51", "53", "55", "57"],
+      "correct": 1
+    },
+    {
+      "prompt": "Which ocean is the deepest?",
+      "choices": ["Atlantic", "Indian", "Pacific", "Arctic"],
+      "correct": 2
+    },
+    {
+      "prompt": "What is the chemical symbol for gold?",
+      "choices": ["Go", "Gd", "Au", "Ag"],
+      "correct": 2
+    },
+    {
+      "prompt": "Which country produced the playwright Anton Chekhov?",
+      "choices": ["Russia", "Poland", "Czechia", "Ukraine"],
+      "correct": 0
+    },
+    {
+      "prompt": "Which mammal lays eggs?",
+      "choices": ["Sloth", "Pangolin", "Platypus", "Tapir"],
+      "correct": 2
+    },
+    {
+      "prompt": "Roughly how long does sunlight take to reach Earth?",
+      "choices": ["8 seconds", "8 minutes", "8 hours", "8 days"],
+      "correct": 1
+    },
+    {
+      "prompt": "Which painter cut off part of his own ear in 1888?",
+      "choices": ["Cézanne", "Gauguin", "Monet", "Van Gogh"],
+      "correct": 3
+    },
+    {
+      "prompt": "What's the boiling point of water at sea level in Fahrenheit?",
+      "choices": ["180°", "200°", "212°", "232°"],
+      "correct": 2
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "name": "Tech history",
+  "questions": [
+    {
+      "prompt": "What year did the first iPhone go on sale?",
+      "choices": ["2005", "2006", "2007", "2008"],
+      "correct": 2
+    },
+    {
+      "prompt": "Who is credited as the first computer programmer?",
+      "choices": ["Grace Hopper", "Ada Lovelace", "Margaret Hamilton", "Hedy Lamarr"],
+      "correct": 1
+    },
+    {
+      "prompt": "Which company made the Altair 8800?",
+      "choices": ["MITS", "IBM", "Apple", "Commodore"],
+      "correct": 0
+    },
+    {
+      "prompt": "What does HTTP stand for?",
+      "choices": [
+        "Hyper Transfer Text Protocol",
+        "HyperText Transfer Protocol",
+        "Hyperlink Transit Protocol",
+        "High Throughput Transport Protocol"
+      ],
+      "correct": 1
+    },
+    {
+      "prompt": "Linux was first released in what year?",
+      "choices": ["1989", "1991", "1993", "1995"],
+      "correct": 1
+    },
+    {
+      "prompt": "What was Google's original name?",
+      "choices": ["Backrub", "Searchly", "PageRank", "Crawler"],
+      "correct": 0
+    },
+    {
+      "prompt": "Which language did Brendan Eich create in 10 days in 1995?",
+      "choices": ["Java", "Perl", "JavaScript", "PHP"],
+      "correct": 2
+    },
+    {
+      "prompt": "ARPANET sent its first message between which two universities?",
+      "choices": ["MIT and Harvard", "UCLA and Stanford", "Berkeley and CMU", "Cornell and Yale"],
+      "correct": 1
+    },
+    {
+      "prompt": "What's the year Tim Berners-Lee proposed the World Wide Web?",
+      "choices": ["1987", "1989", "1991", "1993"],
+      "correct": 1
+    },
+    {
+      "prompt": "Which company released the original Game Boy in 1989?",
+      "choices": ["Sega", "Atari", "Nintendo", "Sony"],
+      "correct": 2
+    }
+  ]
+}
