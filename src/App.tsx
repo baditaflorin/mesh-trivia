@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
+import { MeshShell } from "@baditaflorin/mesh-common";
 import { Trivia } from "./features/trivia/Trivia";
-import { SettingsDrawer } from "./features/settings/SettingsDrawer";
+import { SettingsExtras } from "./features/settings/SettingsExtras";
 import { appConfig } from "./shared/config";
-import { InviteShareButton, MeshBeacon } from "@baditaflorin/mesh-common";
 
 const STORAGE = {
   room: `${appConfig.storagePrefix}:room`,
@@ -27,7 +27,6 @@ export function App() {
   const [roomId, setRoomId] = useState(() => readString(STORAGE.room, "default"));
   const [myName, setMyName] = useState(() => readString(STORAGE.name, suggestName()));
   const [customPackJson, setCustomPackJson] = useState(() => readString(STORAGE.customPack, ""));
-  const [settingsOpen, setSettingsOpen] = useState(false);
 
   // Stable peer identity across reloads
   const myPeerId = useMemo(() => {
@@ -49,45 +48,20 @@ export function App() {
   }, [customPackJson]);
 
   return (
-    <div className="app-root">
+    <MeshShell
+      config={appConfig}
+      roomId={roomId}
+      onRoomChange={setRoomId}
+      settingsExtras={
+        <SettingsExtras
+          myName={myName}
+          onNameChange={setMyName}
+          customPackJson={customPackJson}
+          onCustomPackChange={setCustomPackJson}
+        />
+      }
+    >
       <Trivia roomId={roomId} myName={myName} myPeerId={myPeerId} customPackJson={customPackJson} />
-
-      <InviteShareButton appName={appConfig.appName} roomId={roomId} />
-      <MeshBeacon app={appConfig.appName} room={roomId} />
-
-      <button
-        type="button"
-        className="settings-fab"
-        onClick={() => setSettingsOpen(true)}
-        aria-label="Open settings"
-      >
-        ⚙
-      </button>
-
-      <div className="self-ref">
-        <a href={appConfig.repositoryUrl} target="_blank" rel="noreferrer">
-          source
-        </a>
-        <span aria-hidden="true">·</span>
-        <a href={appConfig.paypalUrl} target="_blank" rel="noreferrer">
-          tip ♥
-        </a>
-        <span aria-hidden="true">·</span>
-        <span>
-          v{appConfig.version} · {appConfig.commit}
-        </span>
-      </div>
-
-      <SettingsDrawer
-        open={settingsOpen}
-        onClose={() => setSettingsOpen(false)}
-        roomId={roomId}
-        onRoomChange={setRoomId}
-        myName={myName}
-        onNameChange={setMyName}
-        customPackJson={customPackJson}
-        onCustomPackChange={setCustomPackJson}
-      />
-    </div>
+    </MeshShell>
   );
 }

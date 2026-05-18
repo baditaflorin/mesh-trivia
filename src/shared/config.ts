@@ -1,6 +1,9 @@
 export const appConfig = {
   appName: "mesh-trivia",
   storagePrefix: "mesh-trivia",
+  description:
+    "Peer-to-peer mesh trivia. Drop a JSON pack, share a room, and tap answers in sync across every phone.",
+  accentHex: "#a07fed",
   version: __APP_VERSION__,
   commit: __GIT_COMMIT__,
   repositoryUrl: "https://github.com/baditaflorin/mesh-trivia",
