@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Trivia } from "./features/trivia/Trivia";
 import { SettingsDrawer } from "./features/settings/SettingsDrawer";
 import { appConfig } from "./shared/config";
+import { InviteShareButton } from "@baditaflorin/mesh-common";
 
 const STORAGE = {
   room: `${appConfig.storagePrefix}:room`,
@@ -51,6 +52,7 @@ export function App() {
     <div className="app-root">
       <Trivia roomId={roomId} myName={myName} myPeerId={myPeerId} customPackJson={customPackJson} />
 
+      <InviteShareButton appName={appConfig.appName} roomId={roomId} />
       <button
         type="button"
         className="settings-fab"
