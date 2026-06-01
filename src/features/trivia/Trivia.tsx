@@ -308,15 +308,18 @@ export function Trivia({ roomId, myName, myPeerId, customPackJson }: Props) {
   }
 
   if (!game) {
+    const playerCount = Object.keys(scoreboard).length;
     return (
       <div className="trivia-stage trivia-pregame">
         <div className="trivia-hud">
-          <span>{Object.keys(scoreboard).length} players</span>
+          <span>
+            {playerCount} {playerCount === 1 ? "player" : "players"}
+          </span>
           <span>·</span>
           <span>idle</span>
         </div>
         <div className="trivia-pregame-content">
-          <h2>Pick a pack to start</h2>
+          <h2>Pick a pack — everyone in the room plays it</h2>
           <div className="trivia-pack-list">
             {availablePacks.map((p) => (
               <button
@@ -330,6 +333,13 @@ export function Trivia({ roomId, myName, myPeerId, customPackJson }: Props) {
               </button>
             ))}
           </div>
+          {playerCount <= 1 && (
+            <p className="trivia-hint trivia-solo-hint">
+              You&rsquo;re the only one here. Open this page on another phone (or just a second
+              browser tab) in the same room <code>{roomId}</code> — that&rsquo;s your second player.
+              Use the 📡 button to share a join link.
+            </p>
+          )}
           {!customPack && (
             <p className="trivia-hint">
               Tip — paste a JSON pack in <strong>Settings</strong> to add your own.

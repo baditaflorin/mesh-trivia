@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { validatePack } from "../trivia/packs";
 
 type Props = {
@@ -15,6 +15,13 @@ export function SettingsExtras({
   onCustomPackChange,
 }: Props) {
   const [draftPack, setDraftPack] = useState(customPackJson);
+  const [saved, setSaved] = useState(false);
+
+  useEffect(() => {
+    if (!saved) return undefined;
+    const t = setTimeout(() => setSaved(false), 2500);
+    return () => clearTimeout(t);
+  }, [saved]);
 
   const packValidation = useMemo<
     { ok: true; name: string; count: number } | { ok: false; error: string } | null
@@ -66,8 +73,10 @@ export function SettingsExtras({
       <div className="trivia-pack-actions">
         <button
           type="button"
+          disabled={!!draftPack.trim() && packValidation?.ok !== true}
           onClick={() => {
             onCustomPackChange(draftPack);
+            setSaved(true);
           }}
         >
           Save pack
@@ -77,11 +86,20 @@ export function SettingsExtras({
           onClick={() => {
             setDraftPack("");
             onCustomPackChange("");
+            setSaved(true);
           }}
         >
           Clear pack
         </button>
       </div>
+
+      {saved && (
+        <p className="trivia-pack-saved" role="status">
+          {draftPack.trim()
+            ? "Saved — your pack now appears in the picker."
+            : "Cleared — custom pack removed."}
+        </p>
+      )}
     </>
   );
 }

@@ -173,6 +173,23 @@ body,
   text-align: center;
 }
 
+.trivia-solo-hint {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(170, 130, 255, 0.3);
+  background: rgba(170, 130, 255, 0.08);
+  border-radius: 10px;
+  color: var(--fg);
+  opacity: 0.92;
+  line-height: 1.5;
+}
+
+.trivia-solo-hint code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.1em 0.4em;
+  border-radius: 4px;
+}
+
 .trivia-prompt {
   font-size: clamp(1.1rem, 4vw, 1.6rem);
   font-weight: 600;
@@ -435,4 +452,15 @@ body,
   background: transparent;
   color: var(--fg);
   border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.trivia-pack-actions button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.trivia-pack-saved {
+  margin: 0.5rem 0 0;
+  font-size: 0.78rem;
+  color: hsl(140, 60%, 70%);
 }

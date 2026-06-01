@@ -83,6 +83,20 @@ test("peer A starts a question; peer B sees the reveal and both scores sync", as
         return scores.filter((s) => Number.isFinite(s) && s > 0).length;
       });
     await expect.poll(countBPositiveScores, { timeout: 15_000 }).toBeGreaterThanOrEqual(2);
+
+    // CROSS-PEER #3 — "no host phone" (the README's headline differentiator).
+    // The game is now showing the answer for Q1, so both peers render a
+    // "Next question" control. Peer B (NOT the peer who started the pack)
+    // advances the game. If "next" were gated to a host or stranded in local
+    // state, peer A would stay on Q1. Instead peer A must advance to Q2's
+    // prompt, proving control of the shared game Y.Map is symmetric.
+    const nextOnB = b.getByRole("button", { name: /next question/i });
+    await expect(nextOnB).toBeVisible({ timeout: 10_000 });
+    await nextOnB.click();
+
+    const q2Prompt = /how many bones are in the adult human body/i;
+    await expect(a.locator(".trivia-prompt")).toContainText(q2Prompt, { timeout: 10_000 });
+    await expect(b.locator(".trivia-prompt")).toContainText(q2Prompt, { timeout: 10_000 });
   } finally {
     await cleanup();
   }
